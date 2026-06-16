@@ -1,0 +1,26 @@
+CXX      = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2 -I include
+
+SRC = src/uklady_rownan.cpp src/interpolacja.cpp src/aproksymacja.cpp \
+      src/calkowanie.cpp src/rownania_rozniczkowe.cpp src/rownania_nieliniowe.cpp
+
+.PHONY: wszystko testy przyklad1 przyklad2 przyklad3 wyczysc
+
+wszystko: testy przyklad1 przyklad2 przyklad3
+
+testy: $(SRC) testy/testy.cpp
+	$(CXX) $(CXXFLAGS) $(SRC) testy/testy.cpp -o testy/uruchom_testy
+	@echo ">>> Uruchamianie testow..."
+	./testy/uruchom_testy
+
+przyklad1: $(SRC) przyklady/przyklad1_stygniecie.cpp
+	$(CXX) $(CXXFLAGS) $(SRC) przyklady/przyklad1_stygniecie.cpp -o przyklady/przyklad1
+
+przyklad2: $(SRC) przyklady/przyklad2_pierwiastki_calki.cpp
+	$(CXX) $(CXXFLAGS) $(SRC) przyklady/przyklad2_pierwiastki_calki.cpp -o przyklady/przyklad2
+
+przyklad3: $(SRC) przyklady/przyklad3_pokaz.cpp
+	$(CXX) $(CXXFLAGS) $(SRC) przyklady/przyklad3_pokaz.cpp -o przyklady/przyklad3
+
+wyczysc:
+	rm -f testy/uruchom_testy przyklady/przyklad1 przyklady/przyklad2 przyklady/przyklad3

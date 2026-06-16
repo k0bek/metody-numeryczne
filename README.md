@@ -81,8 +81,6 @@ biblioteka_mn/
 | `newton_numeryczny(f, x0, eps)` | Metoda Newtona (numeryczna pochodna) |
 | `sieczne(f, x0, x1, eps)` | Metoda siecznych |
 
----
-
 ## Instalacja i kompilacja
 
 Wymagany kompilator obslugujacy **C++17** (np. `g++ >= 7`).
@@ -98,6 +96,15 @@ make wszystko
 ```bash
 make testy
 ```
+
+### Tylko przyklady
+
+```bash
+make przyklad1
+make przyklad2
+make przyklad3
+```
+
 
 ## Testy
 Plik `testy/testy.cpp` zawiera **≥ 2 testy na kazda funkcje**, obejmujace:
