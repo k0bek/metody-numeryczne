@@ -26,7 +26,7 @@ int main() {
     const double T0      = 7601.0;
     const double alpha   = 1e-12;
     const double t_koniec = 7601.0;
-    const int    N        = 2000;
+    const int    N        = 50000;
 
     auto f = [alpha](double /*t*/, double T) {
         return -alpha * T * T * T * T;

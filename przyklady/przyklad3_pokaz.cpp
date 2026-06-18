@@ -113,19 +113,19 @@ void pokaz_interpolacje() {
 void pokaz_aproksymacje() {
     naglowek("3. APROKSYMACJA");
 
-    auto f = [](double x) { return (x - 1.0) * exp(sin(x * x)); };
+    auto f = [](double x) { return sin(x) + 0.5 * x; };
 
     cout << fixed << setprecision(6);
-    cout << "Aproksymacja f(x) = (x-1)*exp(sin(x^2)) wielomianami MNK\n\n";
-    cout << "Stopien  |  Blad w x=0.5\n";
+    cout << "Aproksymacja f(x) = sin(x) + 0.5x wielomianami MNK na [0, 4]\n\n";
+    cout << "Stopien  |  Blad w x=2.0\n";
     linia();
 
-    double dokladna_05 = f(0.5);
+    double dokladna_20 = f(2.0);
 
-    for (int st : {2, 3, 4, 5}) {
-        auto wspolczynniki = aproksymacja_mnk(f, -2.5, 1.0, st);
-        double aproks = horner(wspolczynniki, 0.5);
-        double blad = fabs(aproks - dokladna_05);
+    for (int st : {1, 3, 5, 7}) {
+        auto wspolczynniki = aproksymacja_mnk(f, 0.0, 4.0, st);
+        double aproks = horner(wspolczynniki, 2.0);
+        double blad = fabs(aproks - dokladna_20);
         cout << "  st=" << st << "   |  " << scientific << blad << "\n";
     }
 

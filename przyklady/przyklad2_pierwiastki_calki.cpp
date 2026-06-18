@@ -65,9 +65,9 @@ int main() {
 
     pokaz("Metoda trapezow (n=1000):",  metoda_trapezow(g, a, b, 1000));
     pokaz("Metoda Simpsona (n=1000):", metoda_simpsona(g, a, b, 1000));
-    pokaz("Gauss-Legendre 2w (n=50):", gauss_legendre(g, a, b, 2, 50));
-    pokaz("Gauss-Legendre 3w (n=50):", gauss_legendre(g, a, b, 3, 50));
-    pokaz("Gauss-Legendre 4w (n=50):", gauss_legendre(g, a, b, 4, 50));
+    pokaz("Gauss-Legendre 2wezly (n=50):", gauss_legendre(g, a, b, 2, 50));
+    pokaz("Gauss-Legendre 3wezly (n=50):", gauss_legendre(g, a, b, 3, 50));
+    pokaz("Gauss-Legendre 4wezly (n pod przedzialy=50):", gauss_legendre(g, a, b, 4, 50));
 
     return 0;
 }
